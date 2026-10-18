@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    [SerializeField] private Vector2Int _gridPosition;
+    [SerializeField] private Color _color;
+
+    private MeshRenderer _meshRenderer;
+    private Node _node;
+
+    private void Start()
     {
-        
+        _meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize(Vector2Int gridPosition, Node node)
     {
-        
+        _gridPosition = gridPosition;
+        _node = node;
     }
+
 }
