@@ -3,8 +3,6 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
 
-    [SerializeField] private Vector2Int _gridPosition;
-
     [SerializeField] private GridColor _gridColor;
 
     private MeshRenderer _meshRenderer;
@@ -15,9 +13,8 @@ public class Tile : MonoBehaviour
         _meshRenderer = GetComponent<MeshRenderer>();
     }
 
-    public void Initialize(Vector2Int gridPosition, Node node)
+    public void Initialize(Node node)
     {
-        _gridPosition = gridPosition;
         _node = node;
     }
 
@@ -29,6 +26,12 @@ public class Tile : MonoBehaviour
     public void SetActiveColor()
     {
         _meshRenderer.material.color = _gridColor.ActiveTileColor;
+    }
+
+    public Node Node
+    {
+        get { return _node; }
+        set { _node = value; }
     }
 
 }
