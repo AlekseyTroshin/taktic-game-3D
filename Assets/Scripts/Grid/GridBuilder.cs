@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class GridBuilder : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GridBuilder : MonoBehaviour
     [SerializeField] private int _columns = 5;
 
     private Grid _grid;
+    private List<string> _names = new List<string>() {"A", "B", "C", "D", "E"};
 
 
     private void Start()
@@ -26,7 +28,7 @@ public class GridBuilder : MonoBehaviour
             {
                 Vector3 tilePosition = new Vector3(i, 0, j);
                 Vector2Int gridPosition = new Vector2Int(i, j);
-                Node node = new Node(gridPosition);
+                Node node = new Node(gridPosition, _names[i] + (j + 1));
 
 
                 Tile tile = Instantiate(_tilePrifab, tilePosition, Quaternion.identity, _tileParent);
