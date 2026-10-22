@@ -5,12 +5,12 @@ public class Node
 {
 
 	public string Name;
-    public Vector2Int NodePosition;
+    public Vector2Int Position;
     public List<Node> Neighbours = new List<Node>();
 
-    public Node(Vector2Int nodePosition, string name)
+    public Node(Vector2Int position, string name)
     {
-    	NodePosition = nodePosition;
+    	Position = position;
     	Name = name;
     }
 

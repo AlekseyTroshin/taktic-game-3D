@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 8851112318682325117}
   - component: {fileID: 5123609559160537752}
   - component: {fileID: 3185524384156842879}
-  - component: {fileID: 3438080705763641539}
   m_Layer: 0
   m_Name: TileWhite
   m_TagString: Untagged
@@ -87,27 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3438080705763641539
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3115187575355077126}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3396282918666824804
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,5 +208,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b539e01fb05824d0ab7bc17821bd285a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridPosition: {x: 0, y: 0}
   _gridColor: {fileID: 11400000, guid: 2fad8a0b1ee101a4f95b6bd73456e3e1, type: 2}

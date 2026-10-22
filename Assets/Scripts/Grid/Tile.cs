@@ -33,5 +33,5 @@ public class Tile : MonoBehaviour
         get { return _node; }
         set { _node = value; }
     }
-
+    
 }

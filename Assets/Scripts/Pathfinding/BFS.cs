@@ -1,4 +1,5 @@
-using UnityEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 public class BFS
 {
@@ -31,7 +32,7 @@ public class BFS
 
             _visited.Add(next);
 
-            foreach(Node node in next.Nodes)
+            foreach(Node node in next.Neighbours)
             {
                 if (!_previous.ContainsKey(node))
                 {
@@ -54,7 +55,7 @@ public class BFS
         }
 
 
-        return _pathToTarget.Reverse().ToList();
+        return Enumerable.Reverse(_pathToTarget).ToList();
     }
 
     private void Clear()

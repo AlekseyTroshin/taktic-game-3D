@@ -59,10 +59,10 @@ public class Grid
     	// 	for (int j = 0; j < _columns; j++)
     	// 	{
         //         Node node = _tiles[i, j].Node;
-        //         Debug.Log(node.NodePosition.x + " " + node.NodePosition.y + " : ");
+        //         Debug.Log(node.Position.x + " " + node.Position.y + " : ");
         //         foreach (Node n in node.Neighbours)
         //         {
-        //             Console.Write(n.NodePosition.x + " " + n.NodePosition.y + " | ");
+        //             Console.Write(n.Position.x + " " + n.Position.y + " | ");
         //         }
         //         Console.WriteLine();
         //     }
