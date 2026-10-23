@@ -42,4 +42,9 @@ public class GridBuilder : MonoBehaviour
         _grid.CreateEdge();
     }
 
+    public Grid Grid
+    {
+        get { return _grid; }
+    }
+
 }

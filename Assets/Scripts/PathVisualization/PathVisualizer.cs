@@ -1,16 +1,36 @@
 using UnityEngine;
-
+using System.Collections.Generic;
+using System.Collections;
 public class PathVisualizer : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    
+    private List<Node> _pathTiles;
+    private Grid _grid;
+
+    public List<Node> PathTiles 
     {
-        
+        get { return _pathTiles; }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetPathTiles(Grid grid, List<Node> pathTiles)
     {
-        
+        _grid = grid;
+        _pathTiles = pathTiles;
     }
+
+    public void StartVisualizerPath()
+    {
+        StartCoroutine(StartVisualizer());
+    }
+
+    private IEnumerator StartVisualizer()
+    {
+        for (int i = 0; i < _pathTiles.Count; i++)
+        {
+            Tile tile = _grid.GetTile(_pathTiles[i].Position);
+            tile.SetActiveColor();
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
 }
