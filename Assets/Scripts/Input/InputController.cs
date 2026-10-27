@@ -33,9 +33,7 @@ public class InputController : MonoBehaviour
                 {
                     if (_startTile != null && _targetTile != null)
                     {
-                       
                         _startTile= tile; 
-                         Debug.Log(_startTile.Node.Position + " | " + _targetTile.Node.Position);
                         _targetTile= null;
                         _pathBfs = null;
                     }
@@ -55,12 +53,14 @@ public class InputController : MonoBehaviour
                         }
                         else 
                         {
+                            _pathVisualizer.StopPathHighlight();
+                            _pathVisualizer.ClearPathTiles();
                             _pathVisualizer.SetPathTiles(_grid, _pathBfs);
-                            _pathVisualizer.StartVisualizerPath();
-                            foreach(Node node in _pathBfs)
-                            {
-                                Debug.Log(node.Name);
-                            }
+                            _pathVisualizer.StartPathHighlight();
+                            // foreach(Node node in _pathBfs)
+                            // {
+                            //     Debug.Log(node.Name);
+                            // }
                         }
                     }
                 }

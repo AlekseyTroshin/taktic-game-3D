@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5403a4ea22064a419e40efdd53445f2, type: 3}
   m_Name: GridColors
   m_EditorClassIdentifier: 
-  _calmTileColor: {r: 0, g: 0, b: 0, a: 0}
-  _activeTileColor: {r: 0, g: 0, b: 0, a: 0}
+  CalmTileColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  ActiveTileColor: {r: 0.25, g: 0.65, b: 0.2, a: 1}
