@@ -11,4 +11,10 @@ public class Hero : MonoBehaviour
         set { _node = value; }
     }
 
+    public void SetPosition(Vector3 position, Node node)
+    {
+        transform.position = position;
+        _node = node;
+    }
+
 }

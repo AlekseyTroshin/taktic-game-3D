@@ -14,7 +14,7 @@ public class GridBuilder : MonoBehaviour
     private List<string> _names = new List<string>() {"A", "B", "C", "D", "E"};
 
 
-    private void Start()
+    private void Awake()
     {
         _grid = new Grid(_rows, _columns);
         CreateGrid(); 

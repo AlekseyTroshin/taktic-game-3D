@@ -33,8 +33,8 @@ public class InputController : MonoBehaviour
                 {
                     if (_startTile != null && _targetTile != null)
                     {
-                        _startTile= tile; 
-                        _targetTile= null;
+                        _startTile = tile; 
+                        _targetTile = null;
                         _pathBfs = null;
                     }
                     else if (_startTile == null)
