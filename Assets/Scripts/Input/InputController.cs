@@ -6,6 +6,7 @@ public class InputController : MonoBehaviour
 
     private Tile _startTile;
     private Tile _targetTile;
+    private Hero _hero;
 
     private BFS _bfs;
     private List<Node> _pathBfs = new List<Node>();
@@ -66,6 +67,11 @@ public class InputController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Initialize(Hero hero)
+    {
+        _hero = hero;
     }
 
 }
