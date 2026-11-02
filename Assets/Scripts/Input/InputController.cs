@@ -4,10 +4,9 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
 
-    private Tile _startTile;
-    private Tile _targetTile;
     private Hero _hero;
-
+    private Tile _targetTile;
+    
     private BFS _bfs;
     private List<Node> _pathBfs = new List<Node>();
 
@@ -32,37 +31,20 @@ public class InputController : MonoBehaviour
 
                 if (tile != null)
                 {
-                    if (_startTile != null && _targetTile != null)
-                    {
-                        _startTile = tile; 
-                        _targetTile = null;
-                        _pathBfs = null;
-                    }
-                    else if (_startTile == null)
-                    {
-                        _startTile = tile;
-                    }
-                    else if (_startTile != tile)
-                    {
-                        _targetTile = tile;
-                        _pathBfs = null;
-                        _pathBfs = _bfs.FindPath(_startTile.Node, _targetTile.Node);
+                    Debug.Log("_hero " + _hero);
+                    _targetTile = tile;
+                    _pathBfs = _bfs.FindPath(_hero.Node, _targetTile.Node);
 
-                        if (_pathBfs == null)
-                        {
-                            _targetTile = null;
-                        }
-                        else 
-                        {
-                            _pathVisualizer.StopPathHighlight();
-                            _pathVisualizer.ClearPathTiles();
-                            _pathVisualizer.SetPathTiles(_grid, _pathBfs);
-                            _pathVisualizer.StartPathHighlight();
-                            // foreach(Node node in _pathBfs)
-                            // {
-                            //     Debug.Log(node.Name);
-                            // }
-                        }
+                    if (_pathBfs == null)
+                    {
+                        _targetTile = null;
+                    }
+                    else 
+                    {
+                        _pathVisualizer.StopPathHighlight();
+                        _pathVisualizer.ClearPathTiles();
+                        _pathVisualizer.SetPathTiles(_grid, _pathBfs);
+                        _pathVisualizer.StartPathHighlight();
                     }
                 }
             }
