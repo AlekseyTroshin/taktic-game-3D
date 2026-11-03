@@ -9,14 +9,16 @@ public class HeroSpawner : MonoBehaviour
     private Node _node;
     private Tile _startTile;
     private Vector2Int _startPosition;
-
+    private PlayerManager _playerManager;
     private void Start()
     {
         _startPosition = new Vector2Int(0, 0);
         _grid = FindAnyObjectByType<GridBuilder>().Grid;
         _startTile = _grid.GetTile(_startPosition);
         _node = _startTile.Node;
+        _playerManager = FindAnyObjectByType<PlayerManager>();
         CreateHero(_startTile, _node);
+        
     }
 
     private void CreateHero(Tile startTile, Node node)
@@ -27,6 +29,8 @@ public class HeroSpawner : MonoBehaviour
             0.75f,
             startTile.transform.position.z
         ), node);
+
+        _playerManager.AddHero(hero);
     }
 
 }
