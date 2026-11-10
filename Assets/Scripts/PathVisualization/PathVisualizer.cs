@@ -57,7 +57,7 @@ public class PathVisualizer : MonoBehaviour
         {
             Tile tile = _grid.GetTile(_pathTiles[i].Position);
             tile.SetActiveColor();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.1f);
         }
 
         _coroutineHighlight = null;
